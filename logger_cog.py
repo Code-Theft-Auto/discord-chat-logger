@@ -4,7 +4,6 @@ import discord
 from discord.ext.commands import Cog, context
 
 
-
 KEYWORD = (
     'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g',
     'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm', 'Q', 'W', 'E', 'R',
@@ -16,6 +15,7 @@ KEYWORD = (
 )
 
 bot = discord.bot()
+
 
 class Logger(Cog):
     """## A simple chat logger
@@ -103,5 +103,5 @@ class Logger(Cog):
         await bot.process_commands(message)
 
 
-def setup(bot):
-    bot.add_cog(Logger)
+def setup(_bot):
+    _bot.add_cog(Logger)
