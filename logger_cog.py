@@ -1,7 +1,7 @@
 import json
 import datetime
 import discord
-from discord.ext.commands import Cog,context
+from discord.ext.commands import Cog, context
 
 
 
@@ -27,7 +27,7 @@ class Logger(Cog):
 
 
     @Cog.listener('on_message')
-    async def log(self,message: context.Context ):
+    async def log(self, message: context.Context ):
 
         AUTHID = str(message.author.id)
         AUTHNAME = message.author
