@@ -97,7 +97,7 @@ class Logger(Cog):
 
                     jsonfile[AUTHID]["messages"].append(content)
                     json.dump(jsonfile, f, indent=7)
-        await bot.process_commands(message)
+        await self.bot.process_commands(message)
 
 
 def setup(_bot):
