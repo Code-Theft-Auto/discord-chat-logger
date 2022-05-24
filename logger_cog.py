@@ -23,10 +23,10 @@ class Logger(Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    
+
     @Cog.listener('on_message')
     async def log(self,message: context.Context ):
-        
+
         AUTHID = str(message.author.id)
         AUTHNAME = message.author
 
@@ -34,13 +34,13 @@ class Logger(Cog):
             jsonfile = json.load(jsonfile)
 
         if message.content.startswith(KEYWORD):
-            
+
             with open("log.json", "w") as f:
-                
+
                 if AUTHID in jsonfile:
 
                     time_ = datetime.datetime.now()
-                    
+
                     try:
                         content = {
                             "message": message.content,
@@ -64,11 +64,11 @@ class Logger(Cog):
 
                     jsonfile[AUTHID]["messages"].append(content)
                     json.dump(jsonfile, f, indent=7)
-                
+
                 else:
-                    
+
                     time_ = datetime.datetime.now()
-                    
+
                     jsonfile[AUTHID] = {
                         "id": int(AUTHID),
                         "name": f"{AUTHNAME}",
