@@ -14,8 +14,6 @@ KEYWORD = (
     '"', '<', '>', '?', '"', "'", ''
 )
 
-bot = discord.bot()
-
 
 class Logger(Cog):
     """## A simple chat logger
@@ -25,9 +23,8 @@ class Logger(Cog):
     def __init__(self, bot):
         self.bot = bot
 
-
     @Cog.listener('on_message')
-    async def log(self, message: context.Context ):
+    async def log(self, message: context.Context):
 
         AUTHID = str(message.author.id)
         AUTHNAME = message.author
